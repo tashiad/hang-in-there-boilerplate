@@ -28,6 +28,9 @@ var savedPostersGrid = document.querySelector(".saved-posters-grid");
 // Delete a poster from grid:
 var miniPoster = document.querySelector(".mini-poster");
 
+// Delete all posters (extension):
+// var deleteAllSavedButton = document.querySelector(".delete-all");
+
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -139,6 +142,8 @@ backToMainButton.addEventListener("click", returnToMainFromSaved);
 showMyPosterButton.addEventListener("click", showCreatedPoster);
 saveThisPosterButton.addEventListener("click", createSavedPoster);
 savedPostersGrid.addEventListener("dblclick", deleteMiniPoster);
+// Delete all posters (extension):
+// deleteAllSavedButton.addEventListener("click", resetSavedPostersArray);
 
 // functions and event handlers go here 👇
 function randomizePoster() {
@@ -194,17 +199,17 @@ function savePosterPreventDuplicates() {
 };
 
 function addSavedPosterToGrid() {
-    savedPostersGrid.innerHTML = "";
-    for (var i = 0; i < savedPosters.length; i++) {
-      savedPostersGrid.innerHTML += `
+  savedPostersGrid.innerHTML = "";
+  for (var i = 0; i < savedPosters.length; i++) {
+    savedPostersGrid.innerHTML += `
       <section class="mini-poster" id=${savedPosters[i].id}>
         <img id=${savedPosters[i].id} src=${savedPosters[i].imageURL} alt="does this show">
         <h2 id=${savedPosters[i].id}>${savedPosters[i].title}</h2>
         <h4 id=${savedPosters[i].id}>${savedPosters[i].quote}</h4>
         </section>
       `;
-   };
   };
+};
 
 function createSavedPoster() {
   savePosterPreventDuplicates();
@@ -213,9 +218,22 @@ function createSavedPoster() {
 
 function deleteMiniPoster() {
   for (var i = 0; i < savedPosters.length; i++) {
-    if(event.target.id === `${savedPosters[i].id}`) {
+    if (event.target.id === `${savedPosters[i].id}`) {
       savedPosters.splice(i, 1);
     };
+    addSavedPosterToGrid();
   };
-  addSavedPosterToGrid();
 };
+
+//~~~~~~~~EXTENSION ATTEMPT: "DELETE ALL SAVED POSTERS BUTTON"~~~~~~~~~
+
+// function deleteAllSaved() {
+//     savedPostersScreen.innerHTML += `
+//     <button class="delete-all">Delete All Saved Posters</button>
+//     `
+// };
+
+// function resetSavedPostersArray() {
+//   savedPosters.splice(0, savedPosters.length);
+//   addSavedPosterToGrid();
+// };
