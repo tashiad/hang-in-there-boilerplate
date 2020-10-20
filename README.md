@@ -1,8 +1,8 @@
 # Hang In There: Paired Project
 
 ## Contributors
-- Tashia Davis [GitHub](https://github.com/tashiad)
-- Lucas Merchant [GitHub](https://github.com/lbmerchant93)
+- Tashia Davis - [GitHub](https://github.com/tashiad)
+- Lucas Merchant - [GitHub](https://github.com/lbmerchant93)
 
 **Other contributors:**
 - Collin Kallery (mentor)
@@ -47,6 +47,9 @@ Once back on the main screen, you can make your own poster by clicking _"Make Yo
 If you like it, you can repeat the steps from earlier to save it. Your inputs will also be stored for use in future randomized posters. If you decide you don't want a particular poster to be saved any longer, double click it and it will be deleted.
 
 ![screenshot of saved posters grid](https://github.com/tashiad/hang-in-there-boilerplate/blob/create-our-README.md/readme-imgs/saved-posters.png)
+
+## Feature Extension Attempt
+You'll see in our code that we attempted to add a "Delete All Saved Posters" button to the Saved Posters view so that you could clear out all saved Posters at once instead of just one at a time by double-clicking. We ultimately couldn't get it to work, but at least you can see what we tried!
 
 ## Future Features
 - Implement data validation and error handling into the form (disable button, provide error messages if data entered is not correct, etc)
